@@ -80,6 +80,7 @@ cp -r {PROJ_DIR}/Redox-Pot/EAIP/io {PiNN_DIR}/
 # Usage
 + training PiNet2 models for EA/IP on GPU
 ```
+# Note: you may need to manually download the Redox-Pot/EAIP/Battery-P30K.h5 file
 cd {PROJ_DIR}/Redox-Pot/EAIP
 python build_pinet2.py
 ```
