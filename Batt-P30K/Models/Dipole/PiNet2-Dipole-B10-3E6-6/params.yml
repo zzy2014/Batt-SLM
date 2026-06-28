@@ -1,0 +1,51 @@
+model:
+  name: AD_dipole_model
+  params:
+    d_scale: 2.5412
+    d_unit: 2.5412
+model_dir: PiNet2-Dipole-B10-3E6-6
+network:
+  name: PiNet2
+  params:
+    atom_types:
+    - 1
+    - 6
+    - 7
+    - 8
+    - 9
+    - 15
+    - 16
+    - 17
+    basis_type: gaussian
+    depth: 5
+    ii_nodes:
+    - 64
+    - 64
+    - 64
+    - 64
+    n_basis: 15
+    out_extra:
+      p1: 1
+      p3: 1
+    out_nodes:
+    - 64
+    pi_nodes:
+    - 64
+    pp_nodes:
+    - 64
+    - 64
+    - 64
+    - 64
+    rank: 3
+    rc: 4.5
+    weighted: false
+optimizer:
+  class_name: Adam
+  config:
+    global_clipnorm: 0.01
+    learning_rate:
+      class_name: ExponentialDecay
+      config:
+        decay_rate: 0.994
+        decay_steps: 10000
+        initial_learning_rate: 0.0001

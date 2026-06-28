@@ -200,6 +200,6 @@ def build_pinet2_model(target_label, random_seed):
 if __name__ == '__main__':
 
     # run it by slurm
-    target_label = "ea" # "ea", "ip"
+    target_label = "ea" # "homo", "lumo", "ea", "ip", "dipole"
     random_seed = 6   # 6, 7, 8
     build_pinet2_model(target_label, random_seed)

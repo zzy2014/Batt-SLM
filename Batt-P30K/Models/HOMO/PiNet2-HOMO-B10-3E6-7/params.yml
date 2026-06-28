@@ -1,0 +1,62 @@
+model:
+  name: potential_model
+  params:
+    e_dress:
+      1: 0.022142244371368677
+      6: -0.9673761272100517
+      7: -1.359720029323844
+      8: -1.1844454672747062
+      9: -1.0957890938726145
+      15: -1.45141398599663
+      16: -1.0172105785162706
+      17: -1.4689556701246234
+    e_loss_multiplier: 1.0
+    e_scale: 1.0
+    e_unit: 1.0
+    f_loss_multiplier: 10.0
+    log_e_per_atom: true
+    use_e_per_atom: false
+    use_force: false
+model_dir: PiNet2-HOMO-B10-3E6-7
+network:
+  name: PiNet2
+  params:
+    atom_types:
+    - 1
+    - 6
+    - 7
+    - 8
+    - 9
+    - 15
+    - 16
+    - 17
+    basis_type: gaussian
+    depth: 5
+    ii_nodes:
+    - 64
+    - 64
+    - 64
+    - 64
+    n_basis: 15
+    out_nodes:
+    - 64
+    pi_nodes:
+    - 64
+    pp_nodes:
+    - 64
+    - 64
+    - 64
+    - 64
+    rank: 3
+    rc: 4.5
+    weighted: false
+optimizer:
+  class_name: Adam
+  config:
+    global_clipnorm: 0.01
+    learning_rate:
+      class_name: ExponentialDecay
+      config:
+        decay_rate: 0.98
+        decay_steps: 100000
+        initial_learning_rate: 0.0001
